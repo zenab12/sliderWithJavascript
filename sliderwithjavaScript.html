@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider With javascript</title>
+    <style>
+
+* {
+    
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+h2 {
+    text-align: center;
+    color:rgb(78, 8, 62);
+    margin: 10px auto
+}
+.slidercontainer {
+    margin: 10px auto;
+    width: 800px;
+    height: 400px;
+    position: relative;
+    border: 10px solid black;
+}
+
+
+.slidercontainer img {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ;
+    z-index: 1;
+    width: 100%;
+    height:100%;
+}
+
+.slidercontainer img.active{
+    opacity:1;
+    
+}
+
+.slidercontainer .slideNumber{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color:rgba(0,0,0,.6);
+    color: aliceblue;
+    padding: 5px 10px;
+    font-size: 20px;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    font-style: oblique;
+}
+
+.slidercontrols {
+    width: 800px;
+    margin: auto;
+    overflow: hidden;
+    bottom:-2%;
+    position: relative;
+    
+}
+
+.slidercontrols .prev,.slidercontrols .next 
+{
+    background-color:rgb(106, 9, 77);
+    
+    color: aliceblue;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    width: 20%;
+    user-select:none;    
+}
+
+.slidercontrols .prev {
+    float: left;
+}
+
+.slidercontrols .next {
+    float: right;
+}
+
+.slidercontrols .prev.disabled,
+.slidercontrols .next.disabled
+
+{
+    background-color: rgba(150, 0, 117, 0.2);
+    cursor: no-drop;
+    
+}
+
+.slidercontrols .indicitor
+
+{
+    width: 60%;
+    float: left;
+    display: inline;
+}
+
+.slidercontrols .indicitor ul
+
+{
+    list-style: none;
+    margin: 0px;
+    text-align: center;
+}
+
+.slidercontrols .indicitor ul li
+
+{
+   display: inline-block;
+    color: black;
+    background-color: white;
+    height: 28px;
+    width: 28px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin:  0px 2px;
+    line-height: 28px;cursor: pointer;
+    
+}
+
+.slidercontrols .indicitor ul li.active
+
+{
+    background-color: rgb(78, 8, 62);
+    color: white;
+    
+}
+/*memory Game*/
+
+.controlsButton
+{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(150,100,200,.4)
+}
+
+
+.controlsButton span
+{
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    color: white;
+    background-color: hotpink;
+    font-size: 30px;
+    padding: 15px 20px;
+    border: 2px solid rgba(150,100,200,1);
+    cursor: pointer;
+    text-align: center;
+    border-radius: 6px;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    <h2> slider with javaScript</h2>
+
+    <div class="slidercontainer" >
+        <div id = "slideNumber" class="slideNumber"></div>
+        <img src="computer-1245714_1280.jpg" alt="computer" class="active">
+        <img src="computer-2982270_1280.jpg" alt="computer">
+        <img src="laptop-1478822_1280.jpg" alt="computer">
+        <img src="laptop-2557571_1280.jpg" alt="computer">
+        <img src="laptop-336704_1280.jpg" alt="computer">
+        <img src="home-office-336377_1280.jpg" alt="computer">
+
+        
+     </div>
+            
+        <div class="slidercontrols">
+        <span id = "prev" class="prev" >prev</span>    
+        <div id = "indicitor" class="indicitor"></div>    
+        <span id = "next" class="next">next</span>    
+            
+        </div>
+
+<script src="sliderwithjavascript.js"></script>
+</body>
+</html>
